@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "paintmod",
+	"version": "${version}",
+	"name": "paintmod",
+	"description": "painting mod that allows players to use a paint bucket and brush to paint mosiacs",
+	"authors": [
+		"Chloe Haynes"
+	],
+	"contact": {
+		"homepage": "https://chloe-lh.github.io/Portfolio-ChloeHaynes/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/paintmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.chloe.paintmod.Paintmod"
+		],
+		"fabric-datagen": [
+			"net.chloe.paintmod.PaintmodDataGenerator"
+		],
+		"client": [
+			"net.chloe.paintmod.PaintmodClient"
+		]
+	},
+	"mixins": [
+		"paintmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
