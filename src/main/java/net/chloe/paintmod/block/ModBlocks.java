@@ -21,8 +21,9 @@ public class ModBlocks {
     // need loot table in order to drop resources when broken
 
     private static Block registerBlock(String name, Block block){
-        registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, Identifier.of(Paintmod.MOD_ID, name), block);
+        Block registeredBlock = Registry.register(Registries.BLOCK, Identifier.of(Paintmod.MOD_ID, name), block);
+        registerBlockItem(name, registeredBlock);
+        return registeredBlock;
     }
     // register block as an item
     private static void registerBlockItem(String name, Block block){
