@@ -1,6 +1,6 @@
 package net.chloe.paintmod;
 
-import net.chloe.paintmod.block.MosaicBlock;
+import net.chloe.paintmod.block.ModBlocks;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -12,6 +12,7 @@ public class Paintmod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		MosaicBlock.registerMosaicBlocks();
+		ModBlocks.registerModBlocks();
+//		MosaicBlock.registerMosaicBlocks();
 	}
 }
