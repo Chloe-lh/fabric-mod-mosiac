@@ -17,7 +17,7 @@ import java.util.function.Function;
 
 public class ModBlocks {
 
-    public static final Block CERAMIC_BLOCK = registerBlock("ceramic_block",
+    public static final Block CERAMIC_TILE = registerBlock("ceramic_tile",
             properties -> new Block(properties
                     .strength(4f)
                     .sounds(BlockSoundGroup.GLASS)));
@@ -44,8 +44,9 @@ public class ModBlocks {
     public static void registerModBlocks() {
         Paintmod.LOGGER.info("Registering Mod blocks for " + Paintmod.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
-                .register(entries -> entries.add(CERAMIC_BLOCK));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries ->{
+            entries.add(ModBlocks.CERAMIC_TILE.asItem());
+        });
     }
 }
 
