@@ -24,11 +24,18 @@ public class ModBlocks {
 
 
     private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> function){
-        Block registering = function.apply(AbstractBlock.Settings.create()
-                .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Paintmod.MOD_ID, name))));
-        registerBlockItem(name, registering);
-        return Registry.register(Registries.BLOCK, Identifier.of(Paintmod.MOD_ID, name), registering);
+        Identifier id = Identifier.of(Paintmod.MOD_ID, name);
+
+        Block block = Registry.register(
+                Registries.BLOCK,
+                id,
+                function.apply(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, id)))
+        );
+
+        registerBlockItem(name, block);
+        return block;
     }
+
 
     private static Block registerBlockWithoutBlockItem(String name, Function<AbstractBlock.Settings, Block> function) {
         return Registry.register(Registries.BLOCK, Identifier.of(Paintmod.MOD_ID, name),
