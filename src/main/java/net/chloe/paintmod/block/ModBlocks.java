@@ -14,7 +14,9 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import java.util.function.Function;
-
+/*
+Registers all blocks
+ */
 public class ModBlocks {
 
     public static final Block CERAMIC_TILE = registerBlock("ceramic_tile",
